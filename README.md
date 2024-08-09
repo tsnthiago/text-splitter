@@ -28,8 +28,8 @@ To set up the project locally, follow these steps:
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/tsnthiago/text-splitter.git
+   cd text-splitter
    ```
 
 2. **Set Up a Virtual Environment**
@@ -88,8 +88,7 @@ The application tracks the total number of tokens used during the analysis. This
 ## Project Structure
 
 ```
-your-repo-name/
-│
+text-splitter/
 ├── .venv/                   # Virtual environment (not included in repo)
 ├── .gitignore               # Git ignore file
 ├── README.md                # Project README
