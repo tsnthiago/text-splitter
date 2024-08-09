@@ -4,5 +4,11 @@
 # Ignorar arquivos Excel
 *.xlsx
 
+# Ignorar arquivos PDF
+*.pdf
+
+# Ignorar arquivos HTML
+*.html
+
 # Ignorar a pasta .env
 .venv/

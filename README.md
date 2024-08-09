@@ -10,6 +10,7 @@ This project leverages AI to analyze social media posts, focusing on specific de
 - [Running the Application](#running-the-application)
 - [Token Usage Tracking](#token-usage-tracking)
 - [Project Structure](#project-structure)
+- [Text Splitting Strategy](#text-splitting-strategy)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -97,6 +98,36 @@ text-splitter/
 ├── data.csv                 # Example data file (if applicable)
 └── .env                     # Environment variables (not included in repo)
 ```
+
+## Text Splitting Strategy
+
+This application uses a character-based text splitting strategy specifically designed to handle the analysis of social media posts from a CSV file while respecting the context window limitations of large language models (LLMs) like GPT-4.
+
+**Key Considerations:**
+
+* **Context Window Limitation:** LLMs have a finite context window, which restricts the amount of text they can process at once. This poses a challenge when analyzing lengthy social media posts.
+* **Line Integrity:** Each social media post, represented as a line in the CSV file, should be treated as a single unit to prevent fragmentation during analysis.
+
+**Implementation:**
+
+The application leverages LangChain's `CharacterTextSplitter` with the following configurations:
+
+1. **Line-Based Splitting:** The `CharacterTextSplitter` is configured with a newline character (`\n`) as the separator, ensuring that each line (post) from the CSV is processed as a complete unit, without being split across multiple chunks.
+
+2. **Dynamic Chunk Size Control:** The `chunk_size` parameter is dynamically calculated based on the LLM's token limit, ensuring that each chunk's total token count (including the analysis prompt) remains within the LLM's context window. This prevents lines from being broken mid-post due to exceeding the token limit.
+
+3. **Chunk Grouping:** The application iterates through the CSV lines and groups them into chunks based on the calculated `chunk_size`. This ensures efficient processing and maintains the integrity of individual posts.
+
+**Benefits:**
+
+- **Accurate Analysis:** By processing each line as a complete unit, the application ensures that the analysis considers the full context of each post, leading to more accurate insights.
+- **Efficient Token Usage:** Dynamic chunk size management optimizes token usage and avoids exceeding the LLM's context window, contributing to cost-effectiveness.
+
+**Future Enhancements:**
+
+- **Adaptive Chunk Sizing:** Implementing a more adaptive chunk sizing strategy that considers not only the token limit but also the semantic coherence of the text could further improve the analysis.
+- **Alternative Splitting Methods:** Exploring other text splitting methods offered by LangChain, such as the `RecursiveCharacterTextSplitter`, could provide alternative approaches for handling longer and more complex posts.
+- **Parallelization:** Utilizing parallel processing techniques to analyze multiple chunks concurrently could significantly improve processing speed and efficiency.
 
 ## Contributing
 

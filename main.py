@@ -6,7 +6,7 @@ import pandas as pd
 
 # 1. Configurações
 csv_file_path = 'data.csv'
-llm_model_name = "gpt-4o-mini"
+llm_model_name = "gpt-4o"
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
 # 2. Configurar Logging
