@@ -1,8 +1,3 @@
-### README.md for Your Project
-
-Here’s a complete README for your project in English, designed to help other developers understand, set up, and run your project.
-
-```markdown
 # AI-Powered Social Media Analysis
 
 This project leverages AI to analyze social media posts, focusing on specific demographics and providing concise insights. It processes CSV files containing social media data, groups the data by age and gender, and then uses OpenAI's language model to generate detailed reports. The final output is a stylized HTML report, which can be easily shared and viewed in a web browser.
@@ -111,13 +106,3 @@ Contributions are welcome! If you have any ideas, suggestions, or issues, please
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
-
-### Key Points:
-
-- **Comprehensive Instructions**: The README covers all aspects of the project, including setup, execution, and understanding the project structure.
-- **Environment Variables**: Instructions on setting up environment variables using a `.env` file are included.
-- **Token Usage Tracking**: The README explains that token usage is tracked and logged for cost management.
-- **Git Ignore and Project Structure**: A brief explanation of the `.gitignore` file and the overall project structure helps orient new developers to the project.
-
-This README should provide other developers with all the information they need to understand, set up, and contribute to your project.
