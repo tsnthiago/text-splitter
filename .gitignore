@@ -1,0 +1,8 @@
+# Ignorar arquivos CSV
+*.csv
+
+# Ignorar arquivos Excel
+*.xlsx
+
+# Ignorar a pasta .env
+.venv/
